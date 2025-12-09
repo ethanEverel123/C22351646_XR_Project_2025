@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bfoaptffpwpeb"]
+
+[node name="cup" type="Node3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00086677074, -1.1920929e-07, 0.00015121698)
+radius = 1.0
+sides = 10
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.1847764, 0.035395145, -0.0028184652)
+sides = 10
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
+operation = 2
+radius = 0.9
+height = 1.9716797
+sides = 10
