@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://be1p1pn564dpd"]
+[gd_scene load_steps=13 format=3 uid="uid://be1p1pn564dpd"]
 
 [ext_resource type="Script" uid="uid://6v67buc5ofgh" path="res://riverFlow.gd" id="1_gqjxk"]
 [ext_resource type="Script" uid="uid://bpm4krpg4t7yf" path="res://trash.gd" id="2_fuygp"]
+[ext_resource type="Script" uid="uid://bapefiuji67qr" path="res://player_move.gd" id="3_fuygp"]
 [ext_resource type="PackedScene" uid="uid://bdrn6ople6xdh" path="res://trash.tscn" id="3_v534t"]
+[ext_resource type="PackedScene" uid="uid://8ea4eqp8aebo" path="res://fish.tscn" id="5_v534t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiml5"]
 
@@ -12,10 +14,6 @@
 transparency = 1
 albedo_color = Color(0.10980392, 0.7764706, 1, 0.48235294)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_5iwgs"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_fuygp"]
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_gqjxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iiml5"]
@@ -23,12 +21,14 @@ albedo_color = Color(0, 0, 0.49803922, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5iwgs"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_5iwgs"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="river" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.661427)
+transform = Transform3D(5, 0, 0, 0, 1.5, 0, 0, 0, 2, 0, 0, -0.661427)
 script = ExtResource("1_gqjxk")
-flow_direction = Vector3(1, 1, 0)
+flow_direction = Vector3(1.5, 9, 0)
 flow_strength = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="river"]
@@ -36,22 +36,9 @@ shape = SubResource("BoxShape3D_iiml5")
 debug_color = Color(0, 0.6, 0.69803923, 0.050980393)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="river"]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_5iwgs")
 surface_material_override/0 = SubResource("StandardMaterial3D_fuygp")
-
-[node name="Trash" type="RigidBody3D" parent="." node_paths=PackedStringArray("SpawnPoint")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8411416, 1.0111547, -0.8646075)
-script = ExtResource("2_fuygp")
-object_scene = ExtResource("3_v534t")
-SpawnPoint = NodePath("../SpawnPoint")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.010494173)
-shape = SubResource("SphereShape3D_5iwgs")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Trash"]
-mesh = SubResource("SphereMesh_fuygp")
-skeleton = NodePath("../..")
 
 [node name="world" type="StaticBody3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -0.846665, 0)
@@ -67,17 +54,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0015702248)
 shape = SubResource("BoxShape3D_5iwgs")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06355536, 0.3151812, 1.0903175)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06355536, 0.8664935, 1.0903175)
+script = ExtResource("3_fuygp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035457313, -0.053650558, 1.2139914)
 shape = SubResource("SphereShape3D_5iwgs")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049413145, 1.2176024)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.90258527, 0.43051112, 0, -0.43051112, 0.90258527, 0.06355536, 1.9172416, 2.5155873)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.35893145, 0.7620967, -0.5388663, 0.137282, 0.6141643, 0.777146, 0.9232128, 0.2049655, -0.32506502, -1.7897624, 0.7044139, -1.8217953)
 
-[node name="SpawnPoint" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70502865, 2.3716943, 0)
+[node name="SpawnPoint" type="Marker3D" parent="." node_paths=PackedStringArray("SpawnPoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.2914841, 0)
+script = ExtResource("2_fuygp")
+trash = ExtResource("3_v534t")
+fish = ExtResource("5_v534t")
+SpawnPoint = NodePath(".")
+
+[node name="bin" type="StaticBody3D" parent="."]

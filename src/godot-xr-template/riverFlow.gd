@@ -7,3 +7,5 @@ func _physics_process(_delta):
 	for body in get_overlapping_bodies():
 		if body is RigidBody3D:
 			body.apply_force(flow_direction * flow_strength)
+			
+			
