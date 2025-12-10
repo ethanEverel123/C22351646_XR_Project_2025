@@ -5,7 +5,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hgn23"]
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="RigidBody3D" type="RigidBody3D" groups=["fish"]]
 script = ExtResource("1_xu20i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

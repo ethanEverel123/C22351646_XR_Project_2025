@@ -20,8 +20,11 @@ func _on_spawn_timeout():
 		var obj = trash.instantiate()
 		obj.global_transform = SpawnPoint.global_transform
 		get_tree().current_scene.add_child(obj)
+		obj.add_to_group("trash")
 	else:
 		var obj = fish.instantiate()
 		obj.global_transform = SpawnPoint.global_transform
 		get_tree().current_scene.add_child(obj)
+		obj.add_to_group("fish")
+
 		

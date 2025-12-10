@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://be1p1pn564dpd"]
+[gd_scene load_steps=14 format=3 uid="uid://be1p1pn564dpd"]
 
 [ext_resource type="Script" uid="uid://6v67buc5ofgh" path="res://riverFlow.gd" id="1_gqjxk"]
 [ext_resource type="Script" uid="uid://bpm4krpg4t7yf" path="res://trash.gd" id="2_fuygp"]
 [ext_resource type="Script" uid="uid://bapefiuji67qr" path="res://player_move.gd" id="3_fuygp"]
 [ext_resource type="PackedScene" uid="uid://bdrn6ople6xdh" path="res://trash.tscn" id="3_v534t"]
 [ext_resource type="PackedScene" uid="uid://8ea4eqp8aebo" path="res://fish.tscn" id="5_v534t"]
+[ext_resource type="PackedScene" uid="uid://d16o48lowbtjv" path="res://can.tscn" id="6_a75lk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiml5"]
 
@@ -74,4 +75,5 @@ trash = ExtResource("3_v534t")
 fish = ExtResource("5_v534t")
 SpawnPoint = NodePath(".")
 
-[node name="bin" type="StaticBody3D" parent="."]
+[node name="RigidBody3D" parent="." instance=ExtResource("6_a75lk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7463299, 0, -0.9386467)
