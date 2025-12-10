@@ -2,11 +2,7 @@ extends Node3D
 
 @export var object_scene: PackedScene
 @export var spawn_interval: float = 1.0
-@export var SpawnPoint : Marker3D
-
-var trash = preload("res://trash.tscn")
-
-
+@export var SpawnPoint: Marker3D
 
 func _ready():
 	var timer := Timer.new()
@@ -17,5 +13,5 @@ func _ready():
 
 func _on_spawn_timeout():
 	var obj = object_scene.instantiate()
-	obj.position = SpawnPoint.position
-	add_child(obj)
+	obj.global_transform = SpawnPoint.global_transform
+	get_tree().current_scene.add_child(obj)
