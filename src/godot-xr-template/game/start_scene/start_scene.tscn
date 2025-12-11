@@ -47,7 +47,7 @@ size = Vector3(3, 2, 0.02)
 [node name="StartZone" instance=ExtResource("1_2sv0p")]
 
 [node name="XROrigin3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.88611984)
 
 [node name="LeftHand" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("3_rfr2t")]
 

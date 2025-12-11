@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://jkwmbp2gok5c"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_g2tvn"]
+[ext_resource type="PackedScene" uid="uid://cvdplpq4ta7ta" path="res://assets/custom/bag2.glb" id="2_7c8u4"]
+[ext_resource type="Script" uid="uid://dsk76wk86o1kv" path="res://deleteObjects.gd" id="2_7msa5"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="3_7msa5"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_fxpi4"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_l4ua6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fxpi4"]
+
+[node name="PickableObject" instance=ExtResource("1_g2tvn")]
+script = ExtResource("2_7msa5")
+lifetime = 5.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1" groups=["trash"]]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.0132762045, 0.1494835, -0.17415905)
+shape = SubResource("SphereShape3D_fxpi4")
+
+[node name="bag2" parent="." index="2" instance=ExtResource("2_7c8u4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33943605)
+
+[node name="HighlightRing" parent="." index="3" instance=ExtResource("3_7msa5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09512293, 0.5207441, -0.13840008)
+
+[node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("5_fxpi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55822206, -0.21146081)
+
+[node name="GrabPointHandRight" parent="." index="5" instance=ExtResource("6_l4ua6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04995203, 0.5850864, -0.22554326)
