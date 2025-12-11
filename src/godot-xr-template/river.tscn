@@ -75,5 +75,5 @@ trash = ExtResource("3_v534t")
 fish = ExtResource("5_v534t")
 SpawnPoint = NodePath(".")
 
-[node name="RigidBody3D" parent="." instance=ExtResource("6_a75lk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7463299, 0, -0.9386467)
+[node name="StaticBody3D" parent="." instance=ExtResource("6_a75lk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22882223, -0.1948305, 1.0851413)

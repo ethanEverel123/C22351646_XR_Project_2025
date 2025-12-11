@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://d16o48lowbtjv"]
+[gd_scene load_steps=5 format=3 uid="uid://d16o48lowbtjv"]
 
 [ext_resource type="Script" uid="uid://c88mojdc10h7h" path="res://can.gd" id="1_5a388"]
 [ext_resource type="PackedScene" uid="uid://cet7x53xcepdr" path="res://assets/custom/Can2.glb" id="1_ihwrd"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ihwrd"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5a388"]
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r7qc7"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
 script = ExtResource("1_5a388")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.43333453, 0)
-shape = SubResource("CylinderShape3D_ihwrd")
+shape = SubResource("CylinderShape3D_5a388")
 
 [node name="Can2" parent="." instance=ExtResource("1_ihwrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46731246, 5.9604645e-08, -0.12861747)
@@ -19,4 +21,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46731246, 5.9604645e-08, -0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="DeleteArea"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.43333453, 0)
-shape = SubResource("CylinderShape3D_ihwrd")
+shape = SubResource("CylinderShape3D_r7qc7")

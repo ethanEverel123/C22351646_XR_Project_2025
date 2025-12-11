@@ -4,8 +4,7 @@ func _ready():
 	$DeleteArea.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	print("Trash can detected:", body)  # Debug
-
+	
+	#delete trash if it enters the can
 	if body.is_in_group("trash"):
-		print("Deleting trash:", body)
 		body.queue_free()

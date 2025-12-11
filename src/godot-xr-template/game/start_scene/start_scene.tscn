@@ -30,14 +30,14 @@ size = Vector3(12, 4, 1)
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vm4dl"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_o3q1p"]
 viewport_path = NodePath("Screen/Viewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm4dl"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_vm4dl")
+albedo_texture = SubResource("ViewportTexture_o3q1p")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iru2p"]
