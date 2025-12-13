@@ -13,18 +13,18 @@
 script = ExtResource("2_7msa5")
 lifetime = 5.0
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1" groups=["trash"]]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.0132762045, 0.1494835, -0.17415905)
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27500212, 0)
 shape = SubResource("SphereShape3D_fxpi4")
 
-[node name="bag2" parent="." index="2" instance=ExtResource("2_7c8u4")]
+[node name="bag2" parent="." index="1" instance=ExtResource("2_7c8u4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33943605)
 
-[node name="HighlightRing" parent="." index="3" instance=ExtResource("3_7msa5")]
+[node name="HighlightRing" parent="." index="2" instance=ExtResource("3_7msa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09512293, 0.5207441, -0.13840008)
 
-[node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("5_fxpi4")]
+[node name="GrabPointHandLeft" parent="." index="3" instance=ExtResource("5_fxpi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55822206, -0.21146081)
 
-[node name="GrabPointHandRight" parent="." index="5" instance=ExtResource("6_l4ua6")]
+[node name="GrabPointHandRight" parent="." index="4" instance=ExtResource("6_l4ua6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04995203, 0.5850864, -0.22554326)
