@@ -10,6 +10,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_fxpi4"]
 
 [node name="PickableObject" instance=ExtResource("1_g2tvn")]
+collision_layer = 133
 script = ExtResource("2_7msa5")
 lifetime = 20.0
 

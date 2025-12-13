@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://be1p1pn564dpd"]
+[gd_scene load_steps=12 format=3 uid="uid://be1p1pn564dpd"]
 
 [ext_resource type="Script" uid="uid://6v67buc5ofgh" path="res://riverFlow.gd" id="1_gqjxk"]
 [ext_resource type="Script" uid="uid://bpm4krpg4t7yf" path="res://trash.gd" id="2_fuygp"]
-[ext_resource type="Script" uid="uid://bapefiuji67qr" path="res://player_move.gd" id="3_fuygp"]
 [ext_resource type="PackedScene" uid="uid://jkwmbp2gok5c" path="res://addons/godot-xr-tools/objects/trash.tscn" id="4_a75lk"]
-[ext_resource type="PackedScene" uid="uid://8ea4eqp8aebo" path="res://fish.tscn" id="5_v534t"]
+[ext_resource type="PackedScene" uid="uid://bka1e4sfdugmc" path="res://fish2.tscn" id="5_a75lk"]
 [ext_resource type="PackedScene" uid="uid://d16o48lowbtjv" path="res://can.tscn" id="6_a75lk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiml5"]
@@ -22,15 +21,13 @@ albedo_color = Color(0, 0, 0.49803922, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5iwgs"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_5iwgs"]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="river" type="Area3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 1.5, 0, 0, 0, 2, 0, 0, -0.661427)
 script = ExtResource("1_gqjxk")
 flow_direction = Vector3(1.5, 9, 0)
-flow_strength = 1.0
+flow_strength = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="river"]
 shape = SubResource("BoxShape3D_iiml5")
@@ -54,14 +51,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iiml5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0015702248)
 shape = SubResource("BoxShape3D_5iwgs")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06355536, 0.8664935, 1.0903175)
-script = ExtResource("3_fuygp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035457313, -0.053650558, 1.2139914)
-shape = SubResource("SphereShape3D_5iwgs")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.90258527, 0.43051112, 0, -0.43051112, 0.90258527, 0.06355536, 1.9172416, 2.5155873)
 
@@ -72,7 +61,7 @@ transform = Transform3D(-0.35893145, 0.7620967, -0.5388663, 0.137282, 0.6141643,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.2914841, 0)
 script = ExtResource("2_fuygp")
 trash = ExtResource("4_a75lk")
-fish = ExtResource("5_v534t")
+fish = ExtResource("5_a75lk")
 spawn_point = NodePath(".")
 
 [node name="StaticBody3D" parent="." instance=ExtResource("6_a75lk")]
