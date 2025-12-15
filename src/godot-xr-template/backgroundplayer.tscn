@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpmyylct82gfd"]
+
+[ext_resource type="AudioStream" uid="uid://kw6smhvxghx0" path="res://bg.wav" id="1_bpjb6"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_bpjb6")
+autoplay = true
