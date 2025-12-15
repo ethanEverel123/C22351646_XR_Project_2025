@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://be1p1pn564dpd"]
+[gd_scene load_steps=16 format=3 uid="uid://be1p1pn564dpd"]
 
 [ext_resource type="Script" uid="uid://6v67buc5ofgh" path="res://riverFlow.gd" id="1_gqjxk"]
 [ext_resource type="Script" uid="uid://bpm4krpg4t7yf" path="res://trash.gd" id="2_fuygp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bka1e4sfdugmc" path="res://fish2.tscn" id="5_a75lk"]
 [ext_resource type="PackedScene" uid="uid://d16o48lowbtjv" path="res://can.tscn" id="6_a75lk"]
 [ext_resource type="PackedScene" uid="uid://bpmyylct82gfd" path="res://backgroundplayer.tscn" id="6_ylf0x"]
+[ext_resource type="Script" uid="uid://b3fw4mp2uh47o" path="res://facts.gd" id="7_ylf0x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiml5"]
 
@@ -21,6 +22,11 @@ albedo_color = Color(0.10980392, 0.7764706, 1, 0.48235294)
 albedo_color = Color(0, 0, 0.49803922, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5iwgs"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ylf0x"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a75lk"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -69,3 +75,21 @@ spawn_point = NodePath(".")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22882223, -0.1948305, 1.647848)
 
 [node name="AudioStreamPlayer3D" parent="." instance=ExtResource("6_ylf0x")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42739987, 2.0309334, -3.5149837)
+texture = SubResource("ViewportTexture_ylf0x")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+script = ExtResource("7_ylf0x")
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport"]
+offset_right = 424.0
+offset_bottom = 127.0
+text = " 1 in 4 – or 2.1 billion people globally – still lack access to safely managed drinking water, including 106 million who drink directly from untreated surface sources.
+
+Globally, it is estimated that rivers transport between 0.8 and 2.7 million metric tons of plastic into the oceans each year
+
+the Ganges River in India and the Yangtze River in China, discharge an estimated 115,000 and 333,000 metric tons of plastic annually."
+label_settings = SubResource("LabelSettings_a75lk")
+autowrap_mode = 1
