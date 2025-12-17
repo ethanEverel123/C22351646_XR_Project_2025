@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://be1p1pn564dpd"]
+[gd_scene load_steps=15 format=3 uid="uid://be1p1pn564dpd"]
 
 [ext_resource type="Script" uid="uid://6v67buc5ofgh" path="res://riverFlow.gd" id="1_gqjxk"]
 [ext_resource type="Script" uid="uid://bpm4krpg4t7yf" path="res://trash.gd" id="2_fuygp"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bka1e4sfdugmc" path="res://fish2.tscn" id="5_a75lk"]
 [ext_resource type="PackedScene" uid="uid://d16o48lowbtjv" path="res://can.tscn" id="6_a75lk"]
 [ext_resource type="PackedScene" uid="uid://bpmyylct82gfd" path="res://backgroundplayer.tscn" id="6_ylf0x"]
-[ext_resource type="Script" uid="uid://b3fw4mp2uh47o" path="res://facts.gd" id="7_ylf0x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiml5"]
 
@@ -81,7 +80,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42739987, 2.0309334, -3.51
 texture = SubResource("ViewportTexture_ylf0x")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite3D"]
-script = ExtResource("7_ylf0x")
 
 [node name="Label" type="Label" parent="Sprite3D/SubViewport"]
 offset_right = 424.0
