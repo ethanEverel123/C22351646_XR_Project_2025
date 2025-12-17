@@ -1,10 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dx2v7nxtdy84o"]
 
-[ext_resource type="AudioStream" path="/Users/ethancrosbie/Desktop/C22351646_XR_Project_2025/src/godot-xr-template/NiceJob.mp3" id="1_txsn6"]
+[ext_resource type="AudioStream" uid="uid://ce77y267a5mrm" path="res://NiceJob.mp3" id="1_txsn6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rj46"]
 transparency = 1
 vertex_color_use_as_albedo = true
+albedo_color = Color(0.65891117, 1.9131974e-06, 5.2943824e-07, 1)
 
 [sub_resource type="Gradient" id="Gradient_q6qou"]
 offsets = PackedFloat32Array(0.62910795, 1)

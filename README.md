@@ -4,7 +4,7 @@ Name: Ethan Crosbie
 
 Student Number: C22351646
 
-Video: [![YouTube](https://youtu.be/Pow8kcbpJQ4?si=3tUS_ueBbPgy1_yf)
+Video: [[YouTube](https://youtu.be/Pow8kcbpJQ4?si=3tUS_ueBbPgy1_yf)
 
 # Description of the project
 The project didn't live up to the initial goals, the user is able to pick up the fish and trash from the river but no points are gained, it does display facts like I wanted and scold the user for putting fish in the bin.
