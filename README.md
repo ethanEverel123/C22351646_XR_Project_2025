@@ -22,6 +22,7 @@ The trash and fish are randomly spawned in at a marker3d, this then puts them in
 |-----------|-----------|
 | trash bag and garbage bin | [source](https://sketchfab.com/3d-models/trash-can-and-garbage-bag-low-poly-63cdc7dbfa8741d7b65a856f7acca148) |
 | fish | Made by James Lawlor |
+| burd | [source](https://sketchfab.com/3d-models/low-poly-bird-animated-82ada91f0ac64ab595fbc3dc994a3590)
 
 #What am I most proud of
 I am most proud of the river, it is a very simple way to make a river in Godot, I had spent a lot of time researching how to make rivers in Godot and they all pointed me to complicated libraries that generate realistic rivers but I am proud of the simplicity of my river.
